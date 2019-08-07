@@ -4,6 +4,6 @@ services:
 - docker
 
 script:
-- docker login -u $ALI_USERNAME 114.115.138.52:8443 -p $ALI_PASSWORD
-- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+- docker login --username $ALI_USERNAME 114.115.138.52:8443 --password $ALI_PASSWORD
+- docker login --user $DOCKER_USERNAME --password $DOCKER_PASSWORD
 - bash push-images.sh
