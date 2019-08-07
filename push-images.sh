@@ -1,5 +1,13 @@
 #!/bin/bash
 
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+"insecure-registries": ["114.115.138.52:8443"]
+}
+EOF
+
+systemctl reload docker
+
 for imagepath in $(cat .imagepath.txt)
 do
 imagename=$(echo $imagepath | awk -F '/' '{print $NF}')
