@@ -1,9 +1,0 @@
-language: bash
-
-services:
-- docker
-
-script:
-- docker login -u $ALI_USERNAME 114.115.138.52:8443 -p $ALI_PASSWORD
-- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-- bash push-images.sh
