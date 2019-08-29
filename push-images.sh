@@ -6,6 +6,10 @@ imagename=$(echo $imagepath | awk -F '/' '{print $NF}')
 docker pull $imagepath
 
 # push到私有仓库
+docker tag $imagepath harbor.laolees.top/admin/$imagename
+docker push harbor.laolees.top/admin/$imagename
+
+# push到私有仓库
 docker tag $imagepath registry.cn-hangzhou.aliyuncs.com/k8mirror/$imagename
 docker push registry.cn-hangzhou.aliyuncs.com/k8mirror/$imagename
 

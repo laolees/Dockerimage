@@ -4,6 +4,7 @@ services:
 - docker
 
 script:
+- docker login --username $HB_USERNAME harbor.laolees.top --password $HB_PASSWORD
 - docker login --username $ALI_USERNAME registry.cn-hangzhou.aliyuncs.com --password $ALI_PASSWORD
 - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
 - bash push-images.sh
